@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="add-title">Cadastro de pessoas</h1>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" placeholder="Informe o nome" formControlName="nome">
+        <mat-error *ngIf="form.get('nome')?.invalid && form.get('nome')?.touched">
+           Nome é obrigatório.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Documento</mat-label>
+        <input matInput type="number" placeholder="Informe o documento" formControlName="documento">
+        <mat-error *ngIf="form.get('documento')?.invalid && form.get('documento')?.touched">
+          Documento é obrigatório.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Telefone</mat-label>
+        <input matInput type="number" formControlName="telefone">
+        <mat-error class="mat-error-date" *ngIf="form.get('telefone')?.invalid && form.get('telefone')?.touched">
+         Telefone é obrigatório.
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+  </div>
+  <div class="action">
+    <button mat-raised-button (click)="back()">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit"
+            [disabled]="form.invalid">Adicionar
+    </button>
+  </div>
+</form>
+

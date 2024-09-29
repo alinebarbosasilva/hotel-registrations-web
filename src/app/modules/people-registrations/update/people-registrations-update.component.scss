@@ -1,0 +1,99 @@
+.content {
+  padding-top: 10px !important;
+}
+
+.edit-title {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+
+  mat-form-field {
+    width: 50%;
+  }
+}
+
+.action {
+  padding: 1rem 0px;
+  display: flex;
+  gap: 1rem;
+  width: 250px;
+
+  button {
+    flex: 1;
+  }
+}
+
+
+.mat-error {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  width: 100%;
+
+  &__date {
+    margin-top: 0.2rem;
+  }
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 600px;
+}
+
+.action-column {
+  flex: 0 0 125px;
+}
+
+.mat-card-actions {
+  justify-content: center;
+}
+
+td {
+  width: 630px;
+  padding: 1rem;
+}
+
+th {
+  padding: 1rem;
+}
+
+.add-button {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checks-button {
+  margin-bottom: 1rem;
+}
+
+.container-buttons-input {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.create__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  width: 30%;
+}
+
+.action-column {
+  flex: 0 0 125px;
+}
+
+.container-actions-buttons {
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+}

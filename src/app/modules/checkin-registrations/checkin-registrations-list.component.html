@@ -1,0 +1,70 @@
+<div class="container-button">
+  <div class="checks-button">
+    <button
+      mat-flat-button
+      color="primary"
+      aria-label="Incluir pessoa"
+      (click)="addPerson()"
+      [disabled]="form.invalid"
+      class="action-column-header"
+    >
+      <span>Incluir pessoa</span>
+    </button>
+  </div>
+
+</div>
+
+<app-checkin-registrations-create></app-checkin-registrations-create>
+
+<mat-card>
+  <mat-toolbar class="toolbar-card">Consultas</mat-toolbar>
+  <div class="container-buttons-input">
+    <form
+      class="create__form"
+      [formGroup]="form"
+    >
+      <label>Filtrar por: </label>
+      <mat-radio-group formControlName="peopleFilter">
+        <mat-radio-button value="option1">Pessoas ainda presentes</mat-radio-button>
+        <mat-radio-button value="option2">Pessoas que já deixaram o hotel</mat-radio-button>
+      </mat-radio-group>
+    </form>
+  </div>
+  <mat-card-content>
+
+    @if ((checkinRegistrations$ | async)?.length) {
+      <mat-table ngSkipHydration [dataSource]="checkinRegistrations$" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef> Nome</th>
+          <td mat-cell *matCellDef="let item"> {{ item.pessoa?.nome }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="documento">
+          <th mat-header-cell *matHeaderCellDef> Documento</th>
+          <td mat-cell *matCellDef="let item"> {{ item.pessoa?.documento }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+          <th mat-header-cell *matHeaderCellDef> Valor gasto(R$)</th>
+          <td mat-cell *matCellDef="let item"> {{ item.valor | currency: 'R$ ' }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </mat-table>
+
+
+
+    } @else {
+      <h2 class="not-found title">Nenhuma informação encontrada.</h2>
+    }
+    <mat-paginator [length]="totalItems$ | async"
+                   (page)="changePage($event)"
+                   [pageSize]="itemsPerPage"
+                   [pageSizeOptions]="[10, 20, 50]"
+                   showFirstLastButtons>
+    </mat-paginator>
+  </mat-card-content>
+</mat-card>
+

@@ -1,0 +1,52 @@
+<div class="container">
+  <mat-toolbar class="toolbar-card">Novo checkin</mat-toolbar>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="content">
+      <div class="container-inputs">
+        <mat-form-field appearance="outline">
+          <mat-label>Data/hora de entrada</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dataEntrada">
+          <mat-error class="mat-error-date"
+                     *ngIf="form.get('dataEntrada')?.invalid && form.get('dataEntrada')?.touched">
+            Data/hora de entrada é obrigatório.
+          </mat-error>
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Data/hora de saída</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="dataSaida">
+          <mat-error class="mat-error-date" *ngIf="form.get('dataSaida')?.invalid && form.get('dataSaida')?.touched">
+            Data/hora de saída é obrigatório.
+          </mat-error>
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="container-inputs">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Pessoa</mat-label>
+          <input type="text" matInput formControlName="pessoa" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            @for (option of filteredOptions | async; track option) {
+              <mat-option [value]="option">{{ option.nome }}- {{ option.documento }}</mat-option>
+            }
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-checkbox formControlName="adicionalVeiculo" class="example-margin">Possui veículo</mat-checkbox>
+      </div>
+
+    </div>
+    <div mat-dialog-actions class="action">
+      <button mat-flat-button color="primary" type="submit"
+              [disabled]="form.invalid">Salvar
+      </button>
+    </div>
+  </form>
+</div>
