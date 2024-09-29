@@ -2,6 +2,8 @@
 
 Tecnologias utilizadas no desenvolvimento WEB: Angular, TypeScript, RxJS, SCSS e Angular Material
 
+https://alinebarbosasilva.github.io/hotel-registrations-web/checkin-registrations
+
 https://github.com/user-attachments/assets/03e3236f-7020-4caf-84f1-61b1ecb39412
 
 
