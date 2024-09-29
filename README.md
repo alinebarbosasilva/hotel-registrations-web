@@ -8,12 +8,12 @@ https://github.com/user-attachments/assets/03e3236f-7020-4caf-84f1-61b1ecb39412
 Desenvolvido uma aplicação que possibilite realizar o check in de um hóspede em um hotel 
 
 Requisitos funcionais 
-● Um CRUD para o cadastro de pessoas; 
-● No check in deve ser possível buscar pessoas desse cadastro pelo nome ou 
+- Um CRUD para o cadastro de pessoas; 
+- No check in deve ser possível buscar pessoas desse cadastro pelo nome ou 
 documento; 
-● Consultar pessoas que já realizaram o check in e não estão mais no hotel; 
-● Consultar pessoas que ainda estão no hotel; 
-● As consultas devem mostrar o valor que a pessoa gastou no hotel e podem ficar na 
+- Consultar pessoas que já realizaram o check in e não estão mais no hotel; 
+- Consultar pessoas que ainda estão no hotel; 
+- As consultas devem mostrar o valor que a pessoa gastou no hotel e podem ficar na 
 mesma página.
 
 ## Pré-requisitos
