@@ -1,0 +1,7 @@
+{
+  "routes": [
+    "/checkin-registrations",
+    "/people-registrations",
+    "/people-registrations/new"
+  ]
+}
