@@ -1,27 +1,33 @@
 # HotelRegistrations
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+Tecnologias utilizadas no desenvolvimento WEB: Angular, TypeScript, RxJS, SCSS e Angular Material
 
-## Development server
+https://github.com/user-attachments/assets/03e3236f-7020-4caf-84f1-61b1ecb39412
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Desenvolvido uma aplicação que possibilite realizar o check in de um hóspede em um hotel 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Requisitos funcionais 
+- Um CRUD para o cadastro de pessoas; 
+- No check in deve ser possível buscar pessoas desse cadastro pelo nome ou 
+documento; 
+- Consultar pessoas que já realizaram o check in e não estão mais no hotel; 
+- Consultar pessoas que ainda estão no hotel; 
+- As consultas devem mostrar o valor que a pessoa gastou no hotel e podem ficar na 
+mesma página.
 
-## Build
+## Pré-requisitos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Antes de começar, certifique-se de ter o Node.js e o Angular CLI instalados em sua máquina.
 
-## Running unit tests
+- Node.js: https://nodejs.org/  --- (Versão minima 20.13.1) compatível com Angular 18.2.5
+- Angular CLI: `npm install -g @angular/cli`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instalação
 
-## Running end-to-end tests
+1. Clone o repositório: `git clone(https://github.com/alinebarbosasilva/hotel-registrations-web.git)`
+2. Navegue até o diretório do projeto: `cd hotel-registrations-web/web`
+3. Instale as dependências: `npm install`
+4. Execute npm start no terminal
+5. Para acessar entre na url: localhost:4200
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
